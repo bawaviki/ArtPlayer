@@ -71,7 +71,7 @@ public class ExoPlayer extends AbsMediaPlayer implements Player.EventListener, A
     public void setPlayerNotificatinManager(Context context,
       String channelId,
       int notificationId,
-      MediaDescriptionAdapter mediaDescriptionAdapter){
+      PlayerNotificationManager.MediaDescriptionAdapter mediaDescriptionAdapter){
         playerNotificationManager=new PlayerNotificationManager(contex,channelId,notificationId,mediaDescriptionAdapter);
     }
      public void setPlayerNotification2Player(){
