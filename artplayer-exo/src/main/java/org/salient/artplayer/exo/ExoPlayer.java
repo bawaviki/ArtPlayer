@@ -62,7 +62,8 @@ public class ExoPlayer extends AbsMediaPlayer implements Player.EventListener, A
     }
 
     public getExoPlayer(){
-        return this.mediaPlayer;
+        SimpleExoPlayer exo=this.mediaPlayer;
+        return exo;
     }
     
     @Override
