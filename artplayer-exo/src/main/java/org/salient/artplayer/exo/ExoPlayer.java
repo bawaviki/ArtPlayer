@@ -10,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.Surface;
+import com.google.android.exoplayer2.ui.PlayerNotificationManager;
 
 import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.exoplayer2.DefaultRenderersFactory;
@@ -50,6 +51,7 @@ import java.util.TimerTask;
 public class ExoPlayer extends AbsMediaPlayer implements Player.EventListener, AnalyticsListener {
 
     private SimpleExoPlayer mediaPlayer;
+    private PlayerNotificationManager playerNotificationManager;
 
     private Context mAppContext;
 
@@ -65,6 +67,18 @@ public class ExoPlayer extends AbsMediaPlayer implements Player.EventListener, A
         SimpleExoPlayer exo=this.mediaPlayer;
         return exo;
     }
+    
+    public void setPlayerNotificatinManager(Context context,
+      String channelId,
+      int notificationId,
+      MediaDescriptionAdapter mediaDescriptionAdapter){
+        playerNotificationManager=new PlayerNotificationManager(contex,channelId,notificationId,mediaDescriptionAdapter);
+    }
+     public void setPlayerNotification2Player(){
+         if(playerNotificationManager!=null){
+            playerNotificationManager.setPlayer(mediaPlayer);
+         }
+     }
     
     @Override
     public void start() {
