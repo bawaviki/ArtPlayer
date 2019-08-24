@@ -61,7 +61,7 @@ public class ExoPlayer extends AbsMediaPlayer implements Player.EventListener, A
         this.mAppContext = context.getApplicationContext();
     }
 
-    public getExoPlayer(){
+    public SimpleExoPlayer getExoPlayer(){
         SimpleExoPlayer exo=this.mediaPlayer;
         return exo;
     }
